@@ -1,0 +1,687 @@
+/* Ana Arka Plan: Ekibinin istediği hafif degrade geçişli koyu mor */
+.login-arkaplan {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #2D1B4E, #1a0f2e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+/* Figma'daki ortalanmış beyaz kart */
+.login-kutu {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  width: 380px;
+  box-sizing: border-box;
+}
+
+/* Logo ve Başlık Hizalaması */
+.logo-alani {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.logo-alani h2 {
+  color: #2D1B4E;
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.sayfa-alt-basligi {
+  text-align: center;
+  color: #555;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+/* Form Elemanları */
+.form-elemanlari {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-grubu {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.input-grubu label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* İkon ve Input'un yan yana durduğu kutu */
+.input-kutusu {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0 12px;
+  background-color: white;
+  transition: border-color 0.3s;
+}
+
+.input-kutusu:focus-within {
+  border-color: #2D1B4E;
+}
+
+.input-ikon {
+  color: #999;
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 12px 10px;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+/* Buton Tasarımı */
+.giris-butonu {
+  background-color: #2D1B4E;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+  transition: background-color 0.3s;
+}
+
+.giris-butonu:hover {
+  background-color: #1a0f2e;
+}
+
+/* Alt Linklerin Figma'daki gibi yerleşimi */
+.alt-linkler {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.alt-linkler p {
+  margin: 0;
+}
+
+.alt-linkler a {
+  color: #2D1B4E;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.alt-linkler a:hover {
+  text-decoration: underline;
+}
+
+.ana-sayfa-link {
+  color: #555 !important;
+  font-weight: 500 !important;
+}
+
+/* Karşılama Ekranı Ekstra Stilleri */
+.karsilama-merkez {
+  flex-direction: column;
+  color: white;
+}
+
+.karsilama-icerik {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.karsilama-logo-alani {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.karsilama-logo-alani h1 {
+  font-size: 48px;
+  margin: 0;
+  font-weight: 800;
+}
+
+.karsilama-alt-baslik {
+  font-size: 18px;
+  color: #d1c4e9;
+  margin-bottom: 40px;
+}
+
+.karsilama-butonlar {
+  display: flex;
+  gap: 20px;
+}
+
+.karsilama-btn {
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.karsilama-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.beyaz-btn {
+  background-color: white;
+  color: #2D1B4E;
+}
+
+.mor-btn {
+  background-color: #583C87;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.karsilama-footer {
+  padding-bottom: 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- ANA PANEL STİLLERİ --- */
+
+/* Tüm sayfanın arka planı çok hafif bir gri olsun ki beyaz kartlar öne çıksın */
+.panel-arkaplan {
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Üst Menü (Navbar) */
+.navbar {
+  background-color: #2D1B4E;
+  /* Ekibinin o güzel mor rengi */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-sol {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-logo-metin {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-hosgeldin {
+  font-size: 13px;
+  color: #c9bdeb;
+  margin-left: 20px;
+  border-left: 1px solid #583C87;
+  padding-left: 20px;
+}
+
+.nav-sag {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.nav-btn:hover {
+  background-color: #402b63;
+}
+
+.aktif-btn {
+  background-color: #583C87;
+  font-weight: bold;
+}
+
+/* İçerik Alanı */
+.panel-icerik {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Beyaz Kartlar */
+.kart {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  /* İki kartın da ekranı eşit paylaşması için */
+}
+
+.kart-baslik {
+  color: #2D1B4E;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+/* Form Elemanları */
+.panel-input-grubu {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-input-grubu label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.panel-input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background-color: #fafafa;
+}
+
+.panel-input:focus {
+  border-color: #2D1B4E;
+}
+
+.panel-slider {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.analiz-btn {
+  width: 100%;
+  background-color: #8fa0b5;
+  /* Tasarımdaki gri/mavi ton */
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.analiz-btn:hover {
+  background-color: #2D1B4E;
+}
+
+/* Sağ Kart (Sonuç Bekleniyor Durumu) */
+.sonuc-bekleniyor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  text-align: center;
+}
+
+.gri-metin {
+  color: #888;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 15px 0 5px 0;
+}
+
+.kucuk-metin {
+  color: #bbb;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* --- ANALİZ DURUMLARI STİLLERİ --- */
+
+.sonuc-icerik-alani {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.durum-merkez {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mor-metin {
+  color: #583C87;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+/* Yükleme Animasyonu (Spinner) */
+.yukleniyor-cemberi {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #583C87;
+  border-radius: 50%;
+  animation: donmeAnimasyonu 1s linear infinite;
+}
+
+@keyframes donmeAnimasyonu {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Sonuç Raporu Tasarımı */
+.sonuc-raporu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.basari-ikonu {
+  background-color: #10B981;
+  /* Başarı Yeşili */
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.sonuc-basligi {
+  color: #10B981;
+  font-size: 24px;
+  margin: 0 0 20px 0;
+}
+
+.sonuc-skor-kutu {
+  background-color: #f8f9fc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.skor-etiket {
+  font-size: 13px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.skor-deger {
+  font-size: 32px;
+  color: #2D1B4E;
+  font-weight: 800;
+}
+
+.sonuc-aciklama {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.yeni-aday-btn {
+  background-color: white;
+  border: 2px solid #583C87;
+  color: #583C87;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.yeni-aday-btn:hover {
+  background-color: #583C87;
+  color: white;
+}
+
+/* --- ANALİZ SONUÇLARI VE ANİMASYON STİLLERİ --- */
+
+.sonuc-icerik-alani {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.durum-merkez {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mor-metin {
+  color: #583C87;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+/* Yükleme Animasyonu */
+.yukleniyor-cemberi {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #583C87;
+  border-radius: 50%;
+  animation: donmeAnimasyonu 1s linear infinite;
+}
+
+@keyframes donmeAnimasyonu {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Rapor Tasarımı Genel */
+.sonuc-raporu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.sonuc-skor-kutu {
+  background-color: #f8f9fc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.skor-etiket {
+  font-size: 13px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.skor-deger {
+  font-size: 32px;
+  color: #2D1B4E;
+  font-weight: 800;
+}
+
+.sonuc-aciklama {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.yeni-aday-btn {
+  background-color: white;
+  border: 2px solid #583C87;
+  color: #583C87;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.yeni-aday-btn:hover {
+  background-color: #583C87;
+  color: white;
+}
+
+/* BAŞARILI (YEŞİL TİK) İKONU */
+.basari-ikonu {
+  background-color: #10B981;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.sonuc-basligi {
+  color: #10B981;
+  font-size: 24px;
+  margin: 0 0 20px 0;
+}
+
+/* YENİ: BAŞARISIZ (KIRMIZI ÇARPI) İKONU */
+.red-ikonu {
+  background-color: #EF4444;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.sonuc-basligi-red {
+  color: #EF4444;
+  font-size: 24px;
+  margin: 0 0 20px 0;
+}
+
+/* --- GEÇMİŞ KAYITLAR TABLO STİLLERİ --- */
+
+.gecmis-karti {
+  background-color: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  max-width: 1000px;
+  margin: 40px auto;
+  /* Sayfada ortalamak için */
+}
+
+.gecmis-tablo {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.gecmis-tablo th {
+  background-color: #f8f9fc;
+  color: #64748b;
+  text-align: left;
+  padding: 15px;
+  font-size: 14px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.gecmis-tablo td {
+  padding: 18px 15px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #333;
+  font-size: 15px;
+}
+
+.durum-etiket {
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.etiket-uygun {
+  background-color: #d1fae5;
+  color: #10b981;
+}
+
+.etiket-red {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
