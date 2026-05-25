@@ -1,19 +1,27 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function GecmisKayitlar() {
-    // Arayüzü test etmek için oluşturduğumuz sahte geçmiş aday verileri
-    const kayitlar = [
-        { id: 1, isim: "Ahmet Yılmaz", deneyim: "3 Yıl", skor: 89.4, durum: "Uygun" },
-        { id: 2, isim: "Ayşe Demir", deneyim: "1 Yıl", skor: 42.1, durum: "Red" },
-        { id: 3, isim: "Mehmet Kaya", deneyim: "5 Yıl", skor: 95.0, durum: "Uygun" },
-        { id: 4, isim: "Fatma Şahin", deneyim: "0 Yıl", skor: 38.5, durum: "Red" },
-        { id: 5, isim: "Ali Can", deneyim: "2 Yıl", skor: 65.2, durum: "Uygun" }
-    ];
+    const [kayitlar, setKayitlar] = useState([]);
+    const [yukleniyor, setYukleniyor] = useState(true);
+
+    // Sayfa açıldığında Kevin'ın Flask backend'inden gerçek geçmiş verileri çekiyoruz
+    useEffect(() => {
+        fetch('http://127.0.0.1:5000/api/gecmis')
+            .then(res => res.json())
+            .then(data => {
+                setKayitlar(data);
+                setYukleniyor(false);
+            })
+            .catch(err => {
+                console.error("Veri çekilemedi:", err);
+                setYukleniyor(false);
+            });
+    }, []);
 
     return (
         <div className="panel-arkaplan">
-
-            {/* Üst Menü (Geçmiş Kayıtlar butonu aktif) */}
+            {/* Üst Menü */}
             <nav className="navbar">
                 <div className="nav-sol">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -34,31 +42,36 @@ function GecmisKayitlar() {
             <div className="gecmis-karti">
                 <h2 className="kart-baslik">Geçmiş Aday Analizleri</h2>
 
-                <table className="gecmis-tablo">
-                    <thead>
-                        <tr>
-                            <th>Aday Adı</th>
-                            <th>Deneyim Yılı</th>
-                            <th>Teknik Skor</th>
-                            <th>Yapay Zeka Kararı</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {kayitlar.map((kayit) => (
-                            <tr key={kayit.id}>
-                                <td style={{ fontWeight: 'bold' }}>{kayit.isim}</td>
-                                <td>{kayit.deneyim}</td>
-                                <td>%{kayit.skor}</td>
-                                <td>
-                                    <span className={`durum-etiket ${kayit.durum === 'Uygun' ? 'etiket-uygun' : 'etiket-red'}`}>
-                                        {kayit.durum}
-                                    </span>
-                                </td>
+                {yukleniyor ? (
+                    <p style={{ textAlign: 'center', color: '#583C87', padding: '20px' }}>Veritabanından kayıtlar yükleniyor...</p>
+                ) : kayitlar.length === 0 ? (
+                    <p style={{ textAlign: 'center', color: '#666', padding: '20px' }}>Henüz hiç analiz kaydı bulunmuyor.</p>
+                ) : (
+                    <table className="gecmis-tablo">
+                        <thead>
+                            <tr>
+                                <th>Aday Adı</th>
+                                <th>Deneyim Yılı</th>
+                                <th>Teknik Skor</th>
+                                <th>Yapay Zeka Kararı</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-
+                        </thead>
+                        <tbody>
+                            {kayitlar.map((kayit) => (
+                                <tr key={kayit.id}>
+                                    <td style={{ fontWeight: 'bold' }}>{kayit.isim}</td>
+                                    <td>{kayit.deneyim}</td>
+                                    <td>%{kayit.skor}</td>
+                                    <td>
+                                        <span className={`durum-etiket ${kayit.durum === 'Uygun' ? 'etiket-uygun' : 'etiket-red'}`}>
+                                            {kayit.durum}
+                                        </span>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                )}
             </div>
         </div>
     );
